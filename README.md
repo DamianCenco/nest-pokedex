@@ -31,6 +31,19 @@ docker-compose up -d
 http://localhost:3000/api/v2/seed
 ```   
 
+# Production build
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno para prod
+3. Crear la nueva imagen 
+```docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build```
+
 ## Stack usado
 * Mongo
 * Nest
+
+# Notas
+Heroku deploy sin cambios:
+```
+git commit -m --allow-empty -m "Trigger Heroku deploy"
+git push heroku <main|master>
+```
